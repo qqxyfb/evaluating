@@ -91,13 +91,31 @@ body {
 
 /* 弹窗内容 */
 .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     width: 80%;
     max-width: 600px;
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
 }
+
+#modal-description {
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #34495e;
+    margin-top: 20px;
+    padding: 10px;
+    border-left: 4px solid #3498db;
+    background: #f8f9fa;
+}
+
+
 
 /* 关闭按钮的样式 */
 .close {
