@@ -4,13 +4,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background-color: #f0f0f0;
     margin: 0;
 }
 
 .upload-container {
     margin-bottom: 20px;
+    display: none;
 }
 
 .score-chart {
@@ -49,6 +50,7 @@ body {
 .item {
     margin: 10px;
     text-align: center;
+    max-width: 130px;
     transform: translateY(0);
     transition: transform 0.3s;
 }
@@ -65,10 +67,52 @@ body {
     transform: translateY(-10px); /* 浮动效果 */
 }
 
-.item-name {
-    margin-top: 5px;
+.item-name-container {
+    width: 120px;
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+}
+
+.item-name-text {
+    position: absolute;
+    white-space: nowrap;
+    text-align: center;
     font-size: 14px;
     font-weight: bold;
+    color: #2c3e50;
+    line-height: 20px;
+     /* 默认居中显示 */
+     left: 50%;
+     transform: translateX(-50%);
+}
+
+/* 滚动动画 */
+.item-name-text.scrolling {
+    animation: scrollText 10s linear infinite;
+    /* 滚动时取消居中定位 */
+    left: 0;
+    transform: translateX(0);
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(calc(120px - 100%));
+    }
+    60% {
+        transform: translateX(calc(120px - 100%));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 悬停暂停效果 */
+.item-name-container:hover .item-name-text.scrolling {
+    animation-play-state: paused;
 }
 
 .item-score {

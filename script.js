@@ -14,16 +14,18 @@ function loadJSONFile() {
             generateScoreChart(data); // 调用生成评分图表的函数
         })
         .catch(error => {
+            console.error(error);
             alert('无法加载或解析JSON文件: ' + error.message);
         });
 }
 
+// 页面加载时自动读取JSON文件
+window.onload = loadJSONFile;
+
 // 生成评分图表
 function generateScoreChart(data) {
     scoreChart.innerHTML = ''; // 清空之前的内容
-    data = data.toSorted((a, b) => {
-        return b.score - a.score
-    });
+    data =  data.sort((a, b) => b.score - a.score);
     // 创建分数段（10到1分），并将作品按分数放入相应段落
     for (let i = 9; i >= 1; i--) {
         const segment = document.createElement('div');
@@ -57,8 +59,11 @@ function generateScoreChart(data) {
                 itemDiv.appendChild(a);
 
                 const nameDiv = document.createElement('div');
-                nameDiv.classList.add('item-name');
-                nameDiv.textContent = item.title;
+                nameDiv.classList.add('item-name-container');
+                const nameText = document.createElement('div');
+                nameText.classList.add('item-name-text');
+                nameText.textContent = item.title;
+                nameDiv.appendChild(nameText);
                 itemDiv.appendChild(nameDiv);
 
                 const scoreDiv = document.createElement('div');
@@ -72,6 +77,7 @@ function generateScoreChart(data) {
 
         scoreChart.appendChild(segment);
     }
+    textScroll();
 }
 
 // 定义关闭弹窗的函数
@@ -93,5 +99,20 @@ window.onclick = function(event) {
     }
 }
 
-// 页面加载时自动读取JSON文件
-window.onload = loadJSONFile;
+function textScroll() {
+    const containers = document.querySelectorAll('.item-name-container');
+    containers.forEach(container => {
+        const text = container.querySelector('.item-name-text');
+        // 如果文本宽度 > 容器宽度，则添加scrolling类
+        if (text.scrollWidth > 120) {
+            text.classList.add('scrolling');
+            // 根据文本长度调整动画时间
+            const textLength = text.scrollWidth;
+            const baseDuration = 10; // 基础12秒
+            const extraDuration = Math.max(0, (textLength - 120) / 50); // 每50px额外增加1秒
+            const totalDuration = baseDuration + extraDuration;
+            
+            text.style.animationDuration = `${totalDuration}s`;
+        }
+    });
+}
