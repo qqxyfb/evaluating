@@ -3,7 +3,7 @@ const scoreChart = document.querySelector('.score-chart');
 
 // 自动读取 resource/data.json 文件
 function loadJSONFile() {
-    fetch('resource/data.json')
+    fetch('../resource/data.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('无法加载JSON文件');
@@ -54,7 +54,7 @@ function generateScoreChart(data) {
                     modal.style.display = "block";
                 };
                 const img = document.createElement('img');
-                img.src = item.image;
+                img.src = item.image.replaceAll("resource/img", "../resource/img");
                 a.appendChild(img);
                 itemDiv.appendChild(a);
 

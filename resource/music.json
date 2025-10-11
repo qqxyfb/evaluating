@@ -1,8 +1,26 @@
 [
   {
-    "title": "歌曲1",
-    "score": 9.4,
-    "music": "resource/music/1.mp3",
-    "description": "歌曲1"
+    "title": "永久hours",
+    "score": 9.5,
+    "music": "https://music.163.com/song/media/outer/url?id=2647740876.mp3",
+    "free": true,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "Over The Next Rainbow",
+    "score": 9.6,
+    "music": "https://music.163.com/#/song?id=1885529681",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "勇気はどこに？君の胸に！ (Surf Rock Ver.)",
+    "score": 9.2,
+    "music": "https://music.163.com/song/media/outer/url?id=2024288406",
+    "free": true,
+    "singer": "Aqours",
+    "description": ""
   }
 ]
