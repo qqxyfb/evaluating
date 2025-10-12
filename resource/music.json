@@ -1,16 +1,16 @@
 [
   {
     "title": "永久hours",
-    "score": 9.5,
-    "music": "https://music.163.com/song/media/outer/url?id=2647740876.mp3",
+    "score": 9.4,
+    "music": "wwy|id=2647740876",
     "free": true,
     "singer": "Aqours",
     "description": ""
   },
   {
     "title": "Over The Next Rainbow",
-    "score": 9.6,
-    "music": "https://music.163.com/#/song?id=1885529681",
+    "score": 9.5,
+    "music": "wwy|id=1885529681",
     "free": false,
     "singer": "Aqours",
     "description": ""
@@ -18,9 +18,225 @@
   {
     "title": "勇気はどこに？君の胸に！ (Surf Rock Ver.)",
     "score": 9.2,
-    "music": "https://music.163.com/song/media/outer/url?id=2024288406",
+    "music": "wwy|id=2024288406",
     "free": true,
     "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "ある日…永遠みたいに！",
+    "score": 8.4,
+    "music": "wwy|id=1903461195",
+    "free": false,
+    "singer": "CYaRon!:伊波杏树|斉藤朱夏|降幡愛",
+    "description": ""
+  },
+  {
+    "title": "君のこころは輝いてるかい？ (Hard Rock Ver.)",
+    "score": 8.3,
+    "music": "wwy|id=2024288401",
+    "free": true,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "決めたよHand in Hand",
+    "score": 8.5,
+    "music": "wwy|id=1832908652",
+    "free": false,
+    "singer": "伊波杏树|逢田梨香子|斉藤朱夏",
+    "description": ""
+  },
+  {
+    "title": "ユメ語るよりユメ歌おう",
+    "score": 8.6,
+    "music": "wwy|id=1832908656",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "心の羽よ君へ飛んでけ！",
+    "score": 8.6,
+    "music": "wwy|id=2621667767",
+    "free": true,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "未来の僕らは知ってるよ",
+    "score": 8.9,
+    "music": "wwy|id=1832908675",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "未来の僕らは知ってるよ (Melodious Hardcore Ver.)",
+    "score": 8.8,
+    "music": "wwy|id=2024288405",
+    "free": true,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "近未来ハッピーエンド",
+    "score": 9.0,
+    "music": "wwy|id=1903461196",
+    "free": false,
+    "singer": "CYaRon!:伊波杏树|斉藤朱夏|降幡愛",
+    "description": ""
+  },
+  {
+    "title": "夜空はなんでも知ってるの？",
+    "score": 9.2,
+    "music": "wwy|id=1903461194",
+    "free": false,
+    "singer": "CYaRon!:伊波杏树|斉藤朱夏|降幡愛",
+    "description": ""
+  },
+  {
+    "title": "No.10",
+    "score": 9.0,
+    "music": "wwy|id=1885529682",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "peace piece pizza",
+    "score": 7.7,
+    "music": "wwy|id=2156451510",
+    "free": true,
+    "singer": "わいわいわい:斉藤朱夏|津島善子|降幡愛",
+    "description": ""
+  },
+  {
+    "title": "ファボタージュ",
+    "score": 8.0,
+    "music": "wwy|id=2103449396",
+    "free": false,
+    "singer": "わいわいわい:斉藤朱夏|小林愛香|降幡愛",
+    "description": ""
+  },
+  {
+    "title": "冒険Type A, B, C!!",
+    "score": 8.3,
+    "music": "wwy|id=1885529759",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "SKY JOURNEY",
+    "score": 7.8,
+    "music": "wwy|id=1832897613",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "One More Sunshine Story",
+    "score": 8.1,
+    "music": "wwy|id=525239432",
+    "free": true,
+    "singer": "伊波杏树",
+    "description": ""
+  },
+  {
+    "title": "R・E・P",
+    "score": 8.3,
+    "music": "wwy|id=2065502692",
+    "free": true,
+    "singer": "斉藤朱夏|諏訪ななか|高槻かなこ",
+    "description": ""
+  },
+  {
+    "title": "ハジマリロード",
+    "score": 8.1,
+    "music": "wwy|id=1331119818",
+    "free": true,
+    "singer": "小林愛香|降幡愛|高槻かなこ",
+    "description": ""
+  },
+  {
+    "title": "Hey, dear my friends",
+    "score": 8.1,
+    "music": "wwy|id=2621951090",
+    "free": true,
+    "singer": "小林愛香|逢田梨香子|鈴木愛奈",
+    "description": ""
+  },
+  {
+    "title": "New Romantic Sailors",
+    "score": 8.4,
+    "music": "wwy|id=1834619380",
+    "free": false,
+    "singer": "Guilty Kiss:小林愛香|逢田梨香子|鈴木愛奈",
+    "description": ""
+  },
+  {
+    "title": "ときめき分類学",
+    "score": 8.7,
+    "music": "wwy|id=413834753",
+    "free": false,
+    "singer": "AZALEA:小宫有纱|諏訪ななか|高槻かなこ",
+    "description": ""
+  },
+  {
+    "title": "GAME ON！",
+    "score": 8.4,
+    "music": "wwy|id=2074127832",
+    "free": true,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "僕らの旅は終わらない",
+    "score": 9.1,
+    "music": "wwy|id=2647740877",
+    "free": true,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "Wonder Caravan!",
+    "score": 8.9,
+    "music": "wwy|id=2739871771",
+    "free": true,
+    "singer": "水瀬いのり",
+    "description": ""
+  },
+  {
+    "title": "WATER BLUE NEW WORLD",
+    "score": 9.2,
+    "music": "wwy|id=1832899387",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "ユメ+ミライ＝無限大",
+    "score": 9.2,
+    "music": "wwy|id=1963057446",
+    "free": false,
+    "singer": "Aqours",
+    "description": ""
+  },
+  {
+    "title": "Shine In The Sky☆",
+    "score": 8.8,
+    "music": "wwy|id=2038906675",
+    "free": false,
+    "singer": "U149",
+    "description": ""
+  },
+  {
+    "title": "ケアレス",
+    "score": 8.6,
+    "music": "wwy|id=1874719040",
+    "free": false,
+    "singer": "ClariS",
     "description": ""
   }
 ]

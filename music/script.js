@@ -56,10 +56,36 @@ let progressInterval;
 let autoStopTimeout;
 const listenTime = 9999;
 
+function getSongSingersList(singerStr) {
+    if (!singerStr) {
+        return [];
+    }
+    const singers = [];
+    // 检查是否包含组合格式 "组合名:成员1|成员2|成员3"
+    if (singerStr.includes(':')) {
+        const [groupName, members] = singerStr.split(':');
+        singers.push(groupName.trim()); // 添加组合名
+        // 添加所有成员
+        if (members) {
+            const memberList = members.split('|').map(m => m.trim()).filter(Boolean);
+            singers.push(...memberList);
+        }
+    } else {
+        // 普通格式，直接分割
+        const singerList = singerStr.split('|').map(s => s.trim()).filter(Boolean);
+        singers.push(...singerList);
+    }
+    return singers;
+}
+
 // 初始化歌手下拉框
 function initSingerSelect() {
     // 获取所有不重复的歌手
-    const singers = [...new Set(songsData.map(song => song.singer))];
+    const singers = [...new Set(
+        songsData.flatMap(song => {
+            return getSongSingersList(song['singer']);
+        })
+    )];
 
     // 按字母顺序排序
     singers.sort();
@@ -109,6 +135,8 @@ function generateSongsList() {
         // 计算评分对应的类名
         const scoreClass = `score-${Math.floor(song.score)}`;
 
+        const singer = song.singer.split(':')[0];
+
         row.innerHTML = `
                     <td class="play-cell">
                         <div class="play-icon" data-index="${globalIndex}">
@@ -121,7 +149,7 @@ function generateSongsList() {
                         <span class="rank-badge">${globalIndex + 1}</span>
                         ${song.title}
                     </td>
-                    <td class="singer-cell">${song.singer}</td>
+                    <td class="singer-cell">${singer}</td>
                     <td class="score-cell ${scoreClass}">${song.score}</td>
                     <td>
                         <button class="detail-btn">详情</button>
@@ -211,8 +239,9 @@ function filterSongs() {
     const selectedScore = scoreSelect.value;
 
     filteredSongs = songsData.filter(song => {
+        let singers = new Set(getSongSingersList(song['singer']));
         // 按歌手筛选
-        if (selectedSinger && song.singer !== selectedSinger) {
+        if (selectedSinger && !singers.has(selectedSinger)) {
             return false;
         }
 
@@ -249,13 +278,33 @@ function resetFilters() {
     filterSongs();
 }
 
+function getSongUrl(song) {
+    let music = song['music'];
+    if (!music || music === '') {
+        return '';
+    }
+    if (music.startsWith('wwy|')) {
+        let id = music.slice(7);
+        if (song['free']) {
+            return 'https://music.163.com/song/media/outer/url?id=' + id;
+        }
+        else {
+            return 'https://music.163.com/#/song?id=' + id;
+        }
+    }
+    // else if (music.endsWith('www')) {
+    //
+    // }
+    return music;
+}
+
 // 播放歌曲
 function playSong(index) {
     // 更新播放器显示
     const song = filteredSongs[index];
-
+    let musicUrl = getSongUrl(song);
     if (!song.free) {
-        let htmlContent = '请前往地址<a href=\'' + song.music + '\' target=\'_blank\'>' + song.title + '</a>进行试听。'
+        let htmlContent = '请前往地址<a href=\'' + musicUrl + '\' target=\'_blank\'>' + song.title + '</a>进行试听。'
         showAlertWithLink('该歌曲无法播放', htmlContent);
         return;
     }
@@ -278,7 +327,7 @@ function playSong(index) {
     nowPlayingSinger.textContent = song.singer;
 
     // 设置音频源并播放
-    audioPlayer.src = song.music;
+    audioPlayer.src = musicUrl;
     audioPlayer.play().then(() => {
         isPlaying = true;
         updatePlayPauseIcons();
